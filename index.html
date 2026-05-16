@@ -3,11 +3,10 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>คำนวณเงิน Ontop</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <title>เครื่องคำนวณเงิน Ontop</title>
+
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -15,39 +14,55 @@
   <div class="card">
 
     <div class="header">
-      <h1>💰 เครื่องคำนวณเงิน Ontop</h1>
-      <p>คำนวณยอดเงิน Ontop ที่ได้รับ</p>
-    </div>
-
-    <div class="form-group">
-      <label>ยอดขายทั้งหมด (บาท)</label>
-      <input type="number" id="saleAmount" placeholder="เช่น 15000">
-    </div>
-
-    <div class="form-group">
-      <label>เปอร์เซ็นต์ Ontop (%)</label>
-      <input type="number" id="ontopPercent" placeholder="เช่น 5">
-    </div>
-
-    <div class="form-group">
-      <label>โบนัสเพิ่ม (บาท)</label>
-      <input type="number" id="bonusAmount" placeholder="เช่น 500">
-    </div>
-
-    <button onclick="calculateOntop()">
-      คำนวณเงิน Ontop
-    </button>
-
-    <div class="result-box" id="resultBox">
-      <div class="result-item">
-        <span>เงิน Ontop:</span>
-        <strong id="ontopResult">0 บาท</strong>
+      <div>
+        <h1>เครื่องคำนวณเงิน Ontop</h1>
+        <p>คำนวณเงินส่วนต่างจากเวรที่จัดและเวรที่อยู่จริง</p>
       </div>
 
-      <div class="result-item total">
-        <span>รวมทั้งหมด:</span>
-        <strong id="totalResult">0 บาท</strong>
+      <div class="rate-box">
+        <div>อัตรา Ontop</div>
+        <strong>300 บาท</strong>
       </div>
+    </div>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>ชื่อ</th>
+            <th>เวรที่จัด</th>
+            <th>เวรที่อยู่จริง</th>
+            <th>ส่วนต่าง</th>
+            <th>เงิน Ontop</th>
+          </tr>
+        </thead>
+
+        <tbody id="tbody"></tbody>
+      </table>
+    </div>
+
+    <div class="summary">
+      <div class="summary-box">
+        <span>รวมเวรที่จัด</span>
+        <strong id="totalAssigned">0</strong>
+      </div>
+
+      <div class="summary-box green">
+        <span>รวมเวรที่อยู่จริง</span>
+        <strong id="totalActual">0</strong>
+      </div>
+
+      <div class="summary-box purple">
+        <span>รวมเงิน Ontop</span>
+        <strong id="totalMoney">0 บาท</strong>
+      </div>
+    </div>
+
+    <div class="guide">
+      <h3>วิธีคำนวณ</h3>
+      <p>• ส่วนต่าง = เวรที่อยู่จริง − เวรที่จัด</p>
+      <p>• เงิน Ontop = ส่วนต่าง × 300 บาท</p>
+      <p>• รองรับเวร 0.5 / 1 / 1.5</p>
     </div>
 
   </div>
