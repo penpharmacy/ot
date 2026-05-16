@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>คำนวณเงิน Ontop</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+  <div class="card">
+
+    <div class="header">
+      <h1>💰 เครื่องคำนวณเงิน Ontop</h1>
+      <p>คำนวณยอดเงิน Ontop ที่ได้รับ</p>
+    </div>
+
+    <div class="form-group">
+      <label>ยอดขายทั้งหมด (บาท)</label>
+      <input type="number" id="saleAmount" placeholder="เช่น 15000">
+    </div>
+
+    <div class="form-group">
+      <label>เปอร์เซ็นต์ Ontop (%)</label>
+      <input type="number" id="ontopPercent" placeholder="เช่น 5">
+    </div>
+
+    <div class="form-group">
+      <label>โบนัสเพิ่ม (บาท)</label>
+      <input type="number" id="bonusAmount" placeholder="เช่น 500">
+    </div>
+
+    <button onclick="calculateOntop()">
+      คำนวณเงิน Ontop
+    </button>
+
+    <div class="result-box" id="resultBox">
+      <div class="result-item">
+        <span>เงิน Ontop:</span>
+        <strong id="ontopResult">0 บาท</strong>
+      </div>
+
+      <div class="result-item total">
+        <span>รวมทั้งหมด:</span>
+        <strong id="totalResult">0 บาท</strong>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
